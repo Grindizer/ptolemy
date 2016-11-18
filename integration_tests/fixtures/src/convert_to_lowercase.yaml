@@ -1,0 +1,17 @@
+selection:
+  include:
+    -
+      object-locators:
+        schema-names:
+          - Test
+        table-names:
+          - "%"
+transformation:
+  convert-lowercase:
+    -
+      object-locators:
+        schema-names:
+          - Test
+        table-names:
+          - ACTOR
+      rule-target: table

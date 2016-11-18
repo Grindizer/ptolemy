@@ -1,0 +1,24 @@
+{
+    "rules": [
+        {
+            "object-locator": {
+                "schema-name": "Test",
+                "table-name": "DMS%"
+            },
+            "rule-action": "exclude",
+            "rule-id": "1",
+            "rule-name": "1",
+            "rule-type": "selection"
+        },
+        {
+            "object-locator": {
+                "schema-name": "Test",
+                "table-name": "%"
+            },
+            "rule-action": "include",
+            "rule-id": "2",
+            "rule-name": "2",
+            "rule-type": "selection"
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+selection:
+  include:
+    -
+      object-locators:
+        schema-names:
+          - Test
+        table-names:
+          - "%"
+transformation:
+  remove-column:
+    -
+      object-locators:
+        schema-names:
+          - Test
+        table-names:
+          - Actor
+        column-names:
+          - col%
+      rule-target: column

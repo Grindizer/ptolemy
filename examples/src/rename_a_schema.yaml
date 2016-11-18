@@ -1,0 +1,16 @@
+selection:
+  include:
+    -
+      object-locators:
+        schema-names:
+          - Test
+        table-names:
+          - "%"
+transformation:
+  rename:
+    -
+      object-locators:
+        schema-names:
+          - Test
+      rule-target: schema
+      value: Test1

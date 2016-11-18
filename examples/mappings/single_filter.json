@@ -1,0 +1,26 @@
+{
+    "rules": [
+        {
+            "filters": [
+                {
+                    "column-name": "empid",
+                    "filter-conditions": [
+                        {
+                            "filter-operator": "gte",
+                            "value": "100"
+                        }
+                    ],
+                    "filter-type": "source"
+                }
+            ],
+            "object-locator": {
+                "schema-name": "Test",
+                "table-name": "Employee"
+            },
+            "rule-action": "include",
+            "rule-id": "1",
+            "rule-name": "1",
+            "rule-type": "selection"
+        }
+    ]
+}

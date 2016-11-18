@@ -1,0 +1,36 @@
+{
+    "rules": [
+        {
+            "filters": [
+                {
+                    "column-name": "empid",
+                    "filter-conditions": [
+                        {
+                            "filter-operator": "ste",
+                            "value": "100"
+                        }
+                    ],
+                    "filter-type": "source"
+                },
+                {
+                    "column-name": "dept",
+                    "filter-conditions": [
+                        {
+                            "filter-operator": "eq",
+                            "value": "tech"
+                        }
+                    ],
+                    "filter-type": "source"
+                }
+            ],
+            "object-locator": {
+                "schema-name": "Test",
+                "table-name": "Employee"
+            },
+            "rule-action": "include",
+            "rule-id": "1",
+            "rule-name": "1",
+            "rule-type": "selection"
+        }
+    ]
+}

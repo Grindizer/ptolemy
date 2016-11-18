@@ -1,0 +1,14 @@
+{
+    "rules": [
+        {
+            "object-locator": {
+                "schema-name": "Test",
+                "table-name": "%"
+            },
+            "rule-action": "include",
+            "rule-id": "1",
+            "rule-name": "1",
+            "rule-type": "selection"
+        }
+    ]
+}

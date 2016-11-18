@@ -1,0 +1,16 @@
+selection:
+  include:
+    -
+      object-locators:
+        schema-names:
+          - Test
+        table-names:
+          - Employee
+      filters:
+        -
+          filter-type: source
+          column-name: empid
+          filter-conditions:
+            -
+              filter-operator: gte
+              value: "100"

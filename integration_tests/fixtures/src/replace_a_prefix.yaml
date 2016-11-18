@@ -1,0 +1,21 @@
+selection:
+  include:
+    -
+      object-locators:
+        schema-names:
+          - Test
+        table-names:
+          - "%"
+transformation:
+  replace-prefix:
+    -
+      object-locators:
+        schema-names:
+          - "%"
+        table-names:
+          - "%"
+        column-names:
+          - "%"
+      rule-target: column
+      value: NewPre_
+      old-value: Pre_

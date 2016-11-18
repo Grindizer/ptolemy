@@ -1,0 +1,18 @@
+selection:
+  include:
+    -
+      object-locators:
+        schema-names:
+          - Test
+        table-names:
+          - "%"
+transformation:
+  add-prefix:
+    -
+      object-locators:
+        schema-names:
+          - Test
+        table-names:
+          - "%"
+      rule-target: table
+      value: DMS_

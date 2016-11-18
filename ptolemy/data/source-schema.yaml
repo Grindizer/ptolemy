@@ -1,0 +1,290 @@
+$schema: http://json-schema.org/draft-04/schema#
+title: ptolemy-source-schema
+type: object
+required:
+  - selection
+additionalProperties: false
+properties:
+
+  selection:
+    type: object
+    additionalProperties: false
+    properties:
+
+      include:
+        type: array
+        items:
+          type: object
+          required:
+            - object-locators
+          additionalProperties: false
+          properties:
+
+            object-locators:
+              type: object
+              required:
+                - schema-names
+                - table-names
+              additionalProperties: false
+              properties:
+
+                schema-names: &array-of-strings
+                  type: array
+                  items:
+                    type: string
+
+                table-names: *array-of-strings
+
+            filters:
+              type: array
+              items:
+                type: object
+                required:
+                  - filter-type
+                  - column-name
+                  - filter-conditions
+                additionalProperties: false
+                properties:
+
+                  filter-type:
+                    type: string
+                    enum:
+                      - source
+
+                  column-name: &type-string
+                    type: string
+
+                  filter-conditions:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - filter-operator
+                      additionalProperties: false
+                      properties:
+
+                        filter-operator:
+                          type: string
+                          enum:
+                            - ste
+                            - gte
+                            - eq
+                            - between
+
+                        value: *type-string
+
+                        start-value: *type-string
+
+                        end-value: *type-string
+
+            rule-name: *type-string
+
+      exclude:
+        type: array
+        items:
+          type: object
+          required:
+            - object-locators
+          additionalProperties: false
+          properties:
+
+            object-locators:
+              type: object
+              required:
+                - schema-names
+                - table-names
+              additionalProperties: false
+              properties:
+
+                schema-names: *array-of-strings
+
+                table-names: *array-of-strings
+
+            rule-name: *type-string
+
+  transformation:
+    type: object
+    additionalProperties: false
+    properties:
+
+      rename:
+        type: array
+        items:
+          type: object
+          required:
+            - object-locators
+            - rule-target
+            - value
+          additionalProperties: false
+          properties:
+
+            object-locators:
+              type: object
+              required:
+                - schema-names
+              additionalProperties: false
+              properties:
+
+                schema-names: *array-of-strings
+
+                table-names: *array-of-strings
+
+                column-names: *array-of-strings
+
+            rule-target:
+              type: string
+              enum:
+                - schema
+                - table
+                - column
+
+            value: *type-string
+
+            rule-name: *type-string
+
+      remove-column:
+        type: array
+        items:
+          type: object
+          required:
+            - object-locators
+            - rule-target
+          additionalProperties: false
+          properties:
+
+            object-locators:
+              type: object
+              required:
+                - schema-names
+                - table-names
+                - column-names
+              additionalProperties: false
+              properties:
+
+                schema-names: *array-of-strings
+
+                table-names: *array-of-strings
+
+                column-names: *array-of-strings
+
+            rule-target:
+              type: string
+              enum:
+                - column
+
+            rule-name: *type-string
+
+      convert-lowercase: &convert-lowercase-uppercase-properties
+        type: array
+        items:
+          type: object
+          required:
+            - object-locators
+            - rule-target
+          additionalProperties: false
+          properties:
+
+            object-locators:
+              type: object
+              required:
+                - schema-names
+              additionalProperties: false
+              properties:
+
+                schema-names: *array-of-strings
+
+                table-names: *array-of-strings
+
+                column-names: *array-of-strings
+
+            rule-target:
+              type: string
+              enum:
+                - schema
+                - table
+                - column
+
+            rule-name: *type-string
+
+      convert-uppercase: *convert-lowercase-uppercase-properties
+
+      add-prefix: &add-remove-prefix-suffix-properties
+        type: array
+        items:
+          type: object
+          required:
+            - object-locators
+            - rule-target
+            - value
+          additionalProperties: false
+          properties:
+
+            object-locators:
+              type: object
+              required:
+                - schema-names
+              additionalProperties: false
+              properties:
+
+                schema-names: *array-of-strings
+
+                table-names: *array-of-strings
+
+                column-names: *array-of-strings
+
+            rule-target:
+              type: string
+              enum:
+                - schema
+                - table
+                - column
+
+            value: *type-string
+
+            rule-name: *type-string
+
+      remove-prefix: *add-remove-prefix-suffix-properties
+
+      replace-prefix: &replace-prefix-suffix-properties
+        type: array
+        items:
+          type: object
+          required:
+            - object-locators
+            - rule-target
+            - old-value
+            - value
+          additionalProperties: false
+          properties:
+
+            object-locators:
+              type: object
+              required:
+                - schema-names
+              additionalProperties: false
+              properties:
+
+                schema-names: *array-of-strings
+
+                table-names: *array-of-strings
+
+                column-names: *array-of-strings
+
+            rule-target:
+              type: string
+              enum:
+                - schema
+                - table
+                - column
+
+            old-value: *type-string
+
+            value: *type-string
+
+            rule-name: *type-string
+
+      add-suffix: *add-remove-prefix-suffix-properties
+
+      remove-suffix: *add-remove-prefix-suffix-properties
+
+      replace-suffix: *replace-prefix-suffix-properties

@@ -1,0 +1,15 @@
+selection:
+  include:
+    -
+      object-locators:
+        schema-names:
+          - Test
+        table-names:
+          - "%"
+  exclude:
+    -
+      object-locators:
+        schema-names:
+          - Test
+        table-names:
+          - DMS%

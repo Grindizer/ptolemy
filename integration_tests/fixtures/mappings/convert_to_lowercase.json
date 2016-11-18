@@ -1,0 +1,25 @@
+{
+    "rules": [
+        {
+            "object-locator": {
+                "schema-name": "Test",
+                "table-name": "%"
+            },
+            "rule-action": "include",
+            "rule-id": "1",
+            "rule-name": "1",
+            "rule-type": "selection"
+        },
+        {
+            "object-locator": {
+                "schema-name": "Test",
+                "table-name": "ACTOR"
+            },
+            "rule-action": "convert-lowercase",
+            "rule-id": "2",
+            "rule-name": "2",
+            "rule-target": "table",
+            "rule-type": "transformation"
+        }
+    ]
+}

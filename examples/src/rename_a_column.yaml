@@ -1,0 +1,20 @@
+selection:
+  include:
+    -
+      object-locators:
+        schema-names:
+          - Test
+        table-names:
+          - "%"
+transformation:
+  rename:
+    -
+      object-locators:
+        schema-names:
+          - Test
+        table-names:
+          - Actor
+        column-names:
+          - first_name
+      rule-target: table
+      value: fname

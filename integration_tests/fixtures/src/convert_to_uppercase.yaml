@@ -1,0 +1,19 @@
+selection:
+  include:
+    -
+      object-locators:
+        schema-names:
+          - Test
+        table-names:
+          - "%"
+transformation:
+  convert-uppercase:
+    -
+      object-locators:
+        schema-names:
+          - "%"
+        table-names:
+          - "%"
+        column-names:
+          - "%"
+      rule-target: column
