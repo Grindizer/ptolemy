@@ -8,7 +8,7 @@ Write terse AWS DMS table mappings.
 Background
 ----------
 
-Amazon Web Services provides a tool for migrating data to, from or between SQL databases. This tool is named `Database Migration Service <https://aws.amazon.com/documentation/dms/>`_ (DMS). When running DMS, users can supply a table mapping, which specifies allows the user to control what data is sent from the source database to the target database. A full list of table mapping options can be found `here <http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html>`_.
+Amazon Web Services provides the `Database Migration Service <https://aws.amazon.com/documentation/dms/>`_ (DMS) tool for migrating data to, from or between SQL databases. When running DMS, users can supply a table mapping, which allows the user to specify what data is sent from the source database to the target database. A full list of table mapping options can be found `here <http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html>`_.
 
 Table mappings are written as JSON documents, which can grow to be long and complex. ``ptolemy`` allows the user to write terse YAML ``source`` files, which can be compiled to valid JSON table mappings using the ``ptolemy`` cli tool.
 
