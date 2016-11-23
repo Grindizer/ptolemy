@@ -11,7 +11,8 @@ import json
 
 
 class Mapping(object):  # pylint: disable=too-few-public-methods
-    """Mapping stores information about the DMS Mapping Table.
+    """
+    Mapping stores information about the DMS Mapping Table.
 
     """
 
@@ -34,6 +35,7 @@ class Mapping(object):  # pylint: disable=too-few-public-methods
         """
         Add rule-id and rule-names to each rule. Rules are numbered from 1,
         as per AWS examples.
+
         """
         for i, rule in enumerate(self.mapping["rules"]):
             rule_number = str(i + 1)

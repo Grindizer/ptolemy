@@ -18,7 +18,8 @@ from .mapping import Mapping
 
 
 class Source(object):  # pylint: disable=too-few-public-methods
-    """Source reads in the source file, and implements the functionality to
+    """
+    Source reads in the source file, and implements the functionality to
     compile it to a DMS Mapping Table.
 
     :param source_file_path: Path to the source file.
@@ -32,7 +33,8 @@ class Source(object):  # pylint: disable=too-few-public-methods
         self.source = None
 
     def compile(self):
-        """Compiles the source file to a valid DMS Mapping Table document.
+        """
+        Compiles the source file to a valid DMS Mapping Table document.
 
         :param source_file_path: The path to the YAML source.
         :type source_file_path: str
@@ -55,7 +57,8 @@ class Source(object):  # pylint: disable=too-few-public-methods
         return self._generate_mapping().to_json()
 
     def _validate(self):
-        """Checks the user-defined source is correctly formatted.
+        """
+        Checks the user-defined source is correctly formatted.
 
         :raises: jsonschema.exceptions.ValidationError
 
@@ -69,7 +72,8 @@ class Source(object):  # pylint: disable=too-few-public-methods
         validate(self.source, source_schema)
 
     def _generate_mapping(self):
-        """Returns the DMS Mapping Table.
+        """
+        Returns the DMS Mapping Table.
 
         :param selection_data: The raw data used to build the selection rules
         :type selection_data: dict
@@ -82,7 +86,8 @@ class Source(object):  # pylint: disable=too-few-public-methods
         return mapping
 
     def _get_rules(self):
-        """Return a list of un-numbered, unnamed DMS rules.
+        """
+        Return a list of un-numbered, unnamed DMS rules.
 
         :returns: list
 
@@ -112,7 +117,8 @@ class Source(object):  # pylint: disable=too-few-public-methods
 
     @staticmethod
     def _get_object_locations(object_locators):
-        """Return all combinations of schema, table and column names.
+        """
+        Return all combinations of schema, table and column names.
 
         object_locators should take the format:
         {
