@@ -194,3 +194,27 @@ would result in:
       └── db-b
           ├── schema-1.yaml
           └── schema-2.yaml
+
+Contributions & testing
+-----------------------
+
+To setup and dev environment and run the integrated tests:
+
+.. code-block:: console
+
+  $ git clone git@github.com:cloudreach/ptolemy.git
+  $ pip install -e ptolemy/[dev]
+
+This will install the project in a develop mode, and also install
+the 'dev' requirements (for now tox to run tests).
+
+Then, and before hacking you can check that all test are passing by:
+
+.. code-block:: console
+
+  $ cd ptolemy
+  $ tox
+
+You are probably already using virtualenv / virtualenvwrapper
+for any dev work, so all the previous command can be ran inside a virtualenv of course.
+(If not using virtualenv ... well, we highly recommend you do ;) -- https://virtualenvwrapper.readthedocs.io/en/latest/ --)
